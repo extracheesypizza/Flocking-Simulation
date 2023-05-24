@@ -1,14 +1,8 @@
-#include <SFML/Graphics.hpp>
-#include <cmath>
-#include <iostream>
-#include <vector>
-
-#include "Boid.cpp"
-#include "Flock.cpp"
+#include "Flock.hpp"
 
 using namespace std;
 
-void drawFlock(Flock* flock, sf::RenderWindow* window)
+static void drawFlock(Flock* flock, sf::RenderWindow* window)
 {
     window->clear(sf::Color::Black);
 
@@ -25,7 +19,7 @@ void drawFlock(Flock* flock, sf::RenderWindow* window)
 
 // ONLY USED TO CREATE THE STARTUP SCREEN
 
-void drawText(sf::RenderWindow* window)
+static void drawText(sf::RenderWindow* window)
 {
     sf::Font font_;
     if(!font_.loadFromFile("arial.ttf"))
@@ -50,7 +44,7 @@ void drawText(sf::RenderWindow* window)
     window->display();
 }
 
-float getDistanceCircles(float newX, float newY, float oldX, float oldY)
+static float getDistanceCircles(float newX, float newY, float oldX, float oldY)
 {
     float diffX = newX - oldX;
     float diffY = newY - oldY;
@@ -58,7 +52,7 @@ float getDistanceCircles(float newX, float newY, float oldX, float oldY)
     return sqrt(diffX * diffX + diffY * diffY);
 }
 
-vector<sf::CircleShape> drawImage(sf::RenderWindow* window)
+static vector<sf::CircleShape> drawImage(sf::RenderWindow* window)
 {
     window->clear(sf::Color::Black);
 

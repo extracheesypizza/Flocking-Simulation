@@ -1,6 +1,5 @@
 #ifndef FLOCK_H
 #define FLOCK_H
-#include <vector>
 
 #include "Boid.hpp"
 

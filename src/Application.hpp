@@ -1,9 +1,7 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-#include "Boid.hpp"
-#include "Flock.hpp"
-#include "Render.cpp"
+#include "Render.hpp"
 
 class Application
 {
