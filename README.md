@@ -3,10 +3,11 @@
 
 In order to travel and survive, birds and animals form flocks. Flocks require coordination within themselves and within individual creatures. This application models the [behavioural pattern] of so called ['Boids'] such that they form beautiful flocks. 
 
-## How to build [for Windows]
-1. Build the SFML library accroding to this tutorial: https://www.sfml-dev.org/tutorials/2.5/compile-with-cmake.php
-2. Run "build.bat"
-3. Run /res/FlockingSimulation.exe
+## How to build
+1. ```git clone``` the repository
+2. Run  ```git submodule init && git submodule update``` to download the SFML Library (it will take some time and may seem stuck, but be patient)
+3. For Windows run ```cmake -S . -B build/ -G "MinGW Makefiles" -DBUILD_SHARED_LIBS=OFF && cd build && make && .\FlockingSimulation```
+4. For MacOS/Linux run ```cmake -S . -B build/ -DBUILD_SHARED_LIBS=OFF && cd build && make && ./FlockingSimulation```
 
 ## How to use:
 - Upon launching the app you will be greeted with Boids forming a neat title screen saying "Flock".
